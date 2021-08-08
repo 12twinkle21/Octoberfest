@@ -1,0 +1,379 @@
+body{
+padding:0 20px;
+margin:0;
+
+height:auto;
+background-color: #F4EEE3;
+font-family: 'EB Garamond', serif;
+background-image: url('img/background.png');
+}
+/*Global*/
+.title-img{
+   display:block;
+   width:278px;
+   height:56px;
+   margin: 0 auto;
+   margin-bottom:10px;
+   
+}
+.title-pages{
+   font-family: Migra-extralight;
+   font-size: 55px;
+   font-weight:200;
+   width:746px;
+   text-align:center;
+   margin: 0 auto;
+   margin-bottom: 30px;
+   color: #503C49;
+   position:relative;
+}
+.arrows{
+   width:1169px;
+   margin: 0 auto;
+   margin-top:130px;
+}
+.arrows png{
+   width:1169px;
+   height:36px;
+}
+.slider{
+   display:flex;
+   justify-content: space-evenly;
+   margin-top:50px;
+}
+.arrows-of-slider{
+   display: flex;
+   justify-content: center;
+   margin-top:70px;
+}
+.arrow-left{
+   margin-right:75px;
+}
+figcaption{
+   text-align: center;
+   color: #503C49;
+   font-family: Migra-extralight;
+   font-size:28px;
+   font-weight:200;
+   font-style:normal;
+}
+/*Header */
+
+.header{
+padding:0;
+margin-left:10.8px;
+margin-right:10.5px;
+margin-top:21.9px;
+position:relative;
+}
+.header-menu{
+margin:0;
+padding:0;
+display:flex;
+justify-content: space-between;
+margin: 0 104px;
+
+}
+.header-menu ul{
+list-style:none;
+padding:0;
+margin:0;
+display:flex;
+margin-top:38px;
+}
+.header-menu li {
+margin-right:40px;
+}
+.header-menu li a{
+   text-decoration: none;
+   color: #503C49;
+   font-weight:400;
+   font-size:18px;
+}
+.header-menu li:last-child{
+margin-right:0;
+
+}
+.header-logo{
+   position:absolute;
+   top:0;
+   left:570px;
+   width:154px;
+   height:67px;
+}
+.date-of-festival{
+text-align:center;
+font-size:18px;
+font-weight: 400;
+color:#C77C50;
+font-style:italic;
+margin:0;
+padding:0;
+margin-top:218px;
+line-height:23px;
+}
+.header-title{
+   font-size:76px;
+   font-family: Migra-extrabold;
+   font-weight:800;
+   text-align:center;
+   margin:0;
+   padding:0;
+   margin-top:10px;
+   color: #503C49;
+
+}
+.header-text{
+   width:447px;
+   padding:0;
+   margin: 0 auto;
+}
+.header-text p{
+font-size: 18px;
+color: #503C49;
+font-weight: 400;
+text-align: center;
+margin:0;
+padding:0;
+margin-top:20px;
+}
+.border-header{
+   position:absolute;
+   top:0;
+   left:0;
+   z-index: -1000;
+   width: 100%;
+   height:709px;
+}
+.header-btn{
+   width:202px;
+   height:43px;
+   margin: 47px auto 142px auto;
+}
+
+/*Tradition-of-festival*/
+.tradition-of-festival{
+padding:0;
+margin:0;
+padding-top:100px;
+
+}
+
+.start-video{
+   position:absolute;
+   left:345px;
+   top:270px;
+   width:146px;
+   height:146px;
+}
+.video{
+width:839px;
+height:677px;
+margin: 0 auto;
+padding:0;
+
+}
+.video{
+   position:relative;
+}
+.video::before{
+content:'';
+position:absolute;
+width:120px;
+height:235px;
+background: url(img/left-of-video.png) no-repeat;
+left:-135px;
+top:290px;
+}
+
+.video::after{
+   content:'';
+   position:absolute;
+   width:120px;
+   height:235px;
+   background: url(img/right-of-video.png) no-repeat;
+   right:-135px;
+   top:290px;
+   }
+   
+   .festival-text{
+      width:595px;
+      font-size:18px;
+      line-height: 28px;
+      text-align: center;
+      font-weight:400;
+      margin: 0 auto;
+      color: #503C49;
+      margin-top:30px;
+   }
+   .festival-text a{
+      text-decoration: none;
+   }
+      .video-festival{
+         width:843px;
+         height:679px;
+      }
+   /*Events*/
+   .events{
+      padding:0;
+      margin:0;
+      padding-top:100px;
+   }
+   .events-img-1{
+      width:362px;
+      height:292px;
+   }
+   .events-img-2{
+      width:363px;
+      height:292px;
+   }
+   .events-img-3{
+      width:363px;
+      height:292px;
+   }
+   /*Attractions*/
+   .attractions{
+      padding:0;
+      margin:0;
+      padding-top:100px;
+   }
+   .attraction-text{
+      width:680px;
+      font-size:18px;
+      line-height: 28px;
+      text-align: center;
+      font-weight:400;
+      margin: 0 auto;
+      color: #503C49;
+      margin-top:30px;
+   }
+   .attraction-btn{
+      width:202px;
+      height:43px;
+      margin: 47px auto 142px auto;
+   }
+   /*Food-and-drinks*/
+   .food-and-drinks{
+      padding: 100px 0;
+      margin:0;
+   }
+   .food-img-1{
+      width:362px;
+      height:292px;
+   }
+   .food-img-2{
+      width:363px;
+      height:292px;
+   }
+   .food-img-3{
+      width:363px;
+      height:292px;
+   }
+   /*Footer*/
+   .footer{
+      padding:0;
+      margin:0;
+      position: relative;
+      padding-top:60px;
+   }
+   .border-footer{
+      position: absolute;
+      left:0;
+      top:0;
+      z-index:-1000;
+      width: 100%;
+      height:275px;
+   }
+   .footer-items{
+      width:1200px;
+      margin:0 auto;
+      display:flex;
+      justify-content: space-between;
+      margin-bottom:100px;
+   }
+   .footer-items ul{
+      list-style:none;
+      margin-left:0;
+      padding-left:0;
+   }
+   .footer-items h3{
+      font-size:25px;
+      font-weight:500;
+      font-style: normal;
+      color: #503C49;
+   }
+   .footer-items a{
+      text-decoration: none;
+      font-size: 18px;
+      color: #503C49;
+      font-weight: 400;
+      font-style:normal;
+   }
+   .footer-item-1 p{
+    margin:0;
+    padding:0;
+   }
+   .footer-item-1 img{
+   margin-bottom:10px;
+   margin-top:30px;
+   }
+   .footer-item-5 ul{
+      display:flex;
+   }
+   .footer-item-5 li{
+      margin-right:25px;
+   }
+   .footer-item-5 li:last-child{
+      margin-right:0;
+   }
+   .footer-logo{
+      width:164px;
+      height:51px;
+   }
+   .inst-img{
+      width:17px;
+      height:17px;
+   }
+   .inst-tw{
+      width:21px;
+      height:15px;
+   }
+   .inst-fb{
+      width:8px;
+      height:15px;
+   }
+   .footer-item-5{
+      margin-top:20px;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fonts */
+
+@font-face {
+   font-family: Migra-extrabold;
+   src: url(fonts/Migra-Extrabold.ttf) format('truetype');
+   font-style:normal;
+   font-weight: 800;
+}
+@font-face{
+   font-family: Migra-extralight;
+   src: url(fonts/Migra-Extralight.ttf) format('truetype');
+   font-style:normal;
+   font-weight: 200;
+}
