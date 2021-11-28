@@ -1,13 +1,13 @@
-body{
-padding:0 20px;
-margin:0;
-
-height:auto;
-background-color: #F4EEE3;
-font-family: 'EB Garamond', serif;
-background-image: url('img/background.png');
-}
 /*Global*/
+
+body{
+  padding:0 20px;
+  margin:0;
+  height:auto;
+  background-color: #F4EEE3;
+  font-family: 'EB Garamond', serif;
+  background-image: url('img/background.png');
+}
 .title-img{
    display:block;
    width:278px;
@@ -20,7 +20,7 @@ background-image: url('img/background.png');
    font-family: Migra-extralight;
    font-size: 55px;
    font-weight:200;
-   width:746px;
+   max-width:746px;
    text-align:center;
    margin: 0 auto;
    margin-bottom: 30px;
@@ -28,18 +28,19 @@ background-image: url('img/background.png');
    position:relative;
 }
 .arrows{
-   width:1169px;
+   width: 100%;
    margin: 0 auto;
    margin-top:130px;
 }
-.arrows png{
-   width:1169px;
+.arrows img{
+   width:100%;
    height:36px;
 }
 .slider{
    display:flex;
-   justify-content: space-evenly;
+   justify-content: space-between;
    margin-top:50px;
+   transition: all ease 1s;
 }
 .arrows-of-slider{
    display: flex;
@@ -48,6 +49,27 @@ background-image: url('img/background.png');
 }
 .arrow-left{
    margin-right:75px;
+   cursor: pointer;
+}
+.arrow-right{
+   cursor: pointer;
+}
+.arrow-left:hover,
+.arrow-right:hover{
+   width: 70px;
+   height: 40px;
+   margin-bottom: -5px;
+}
+.arrow-left:hover{
+   margin-right: 65px;
+}
+.arrow-right:hover{
+   margin-left: -11px;
+}
+.arrow-left img,
+.arrow-right img{
+   width: 100%;
+   height: 100%;
 }
 figcaption{
    text-align: center;
@@ -57,6 +79,16 @@ figcaption{
    font-weight:200;
    font-style:normal;
 }
+
+.no-active-menu{
+   display:none;
+}
+.active-menu{
+   display:block;
+   animation-duration: 0.5s;
+   animation-name: menu-slide;
+}
+
 /*Header */
 
 .header{
@@ -72,7 +104,6 @@ padding:0;
 display:flex;
 justify-content: space-between;
 margin: 0 104px;
-
 }
 .header-menu ul{
 list-style:none;
@@ -92,14 +123,22 @@ margin-right:40px;
 }
 .header-menu li:last-child{
 margin-right:0;
-
+}
+.header-menu li a:hover{
+   color: #b4b4b4;
 }
 .header-logo{
    position:absolute;
    top:0;
-   left:570px;
-   width:154px;
+   left:calc(50% - 80px);
+   width: 15%;
+   max-width:154px;
    height:67px;
+}
+.header-logo-block{
+   text-align: center;
+   display: none;
+   padding-top: 40px;
 }
 .date-of-festival{
 text-align:center;
@@ -121,10 +160,10 @@ line-height:23px;
    padding:0;
    margin-top:10px;
    color: #503C49;
-
+   padding: 0 10px;
 }
 .header-text{
-   width:447px;
+   max-width:447px;
    padding:0;
    margin: 0 auto;
 }
@@ -143,61 +182,161 @@ margin-top:20px;
    left:0;
    z-index: -1000;
    width: 100%;
-   height:709px;
+   max-height:709px;
 }
 .header-btn{
-   width:202px;
-   height:43px;
+   text-align: center;
    margin: 47px auto 142px auto;
+   background-image: url('img/btn.png');
+   background-repeat: no-repeat;
+   background-size: 100% 100%;
+   width: 202px;
+   height: 43px;
+}
+.header-btn-item{
+height: 43px;
+padding-top: 7px;
+}
+.header-btn a{
+   text-decoration: none;
+   font-size: 18px;
+   font-weight: 400;
+   color: #000;
+}
+.header-btn a:hover{
+   color: #b4b4b4;
+   font-size: 20px;
+}
+
+/* Burger */
+
+
+.nav-burger{
+   width: 20px;
+   padding: 15px 0;
+   position:absolute;
+   cursor: pointer;
+   z-index: 1000;
+   right: 40px;
+   top:40px;
+   display: none;
+}
+.nav-burger-item{
+   display:block;
+   width: 100%;
+   height: 3px;
+   background-color: black;
+   position: absolute;
+   top:0;
+   left:0;
+   right: 0;
+   bottom: 0;
+   margin: auto;
+}
+.nav-burger-item::after,
+.nav-burger-item::before{
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 3px;
+   background-color: black;
+}
+.nav-burger-item::after{
+   top: -6px;
+}
+.nav-burger-item::before{
+   bottom: -6px;
+}
+
+.burger-menu{
+   width: 200px;
+   padding: 20px 15px;
+   position: absolute;
+   top: 30px;
+   right: 5px;
+   background-color: #F4EEE3;
+   border: 1px solid #bcbcbc;
+   cursor:default;
+}
+.burger-menu ul{
+   list-style: none;
+   padding:0;
+}
+.burger-image{
+   width: 200px;
+   margin: 0 auto;
+   margin-bottom: 15px;
+}
+.burger-menu img{
+   width: 100%;
+}
+.burger-menu ul li{
+   text-align: center;
+   margin-bottom: 5px;
+}
+.burger-menu ul li a{
+   font-size: 18px;
+   color: #503C49;
+   text-decoration: none;
+   font-weight: 400;
+}
+.burger-menu ul li a:hover{
+   color: #bcbcbc;
 }
 
 /*Tradition-of-festival*/
+
 .tradition-of-festival{
 padding:0;
 margin:0;
 padding-top:100px;
-
 }
-
+.video{
+padding: 0;
+text-align: center;
+position:relative;
+max-width: 900px;
+margin: 0 auto;
+padding: 0 120px;
+}
 .start-video{
    position:absolute;
-   left:345px;
-   top:270px;
-   width:146px;
-   height:146px;
+   left:calc(50% - 50px);
+   right: 50%;
+   top:calc(50% - 50px);
+   cursor: pointer;
 }
-.video{
-width:839px;
-height:677px;
-margin: 0 auto;
-padding:0;
-
+.start-video:hover{
+   width: 150px;
+   height: 150px;
 }
-.video{
-   position:relative;
+.video-attractions,
+.video-festival{
+   width: 100%;
+   height: auto;
 }
 .video::before{
 content:'';
 position:absolute;
 width:120px;
 height:235px;
-background: url(img/left-of-video.png) no-repeat;
-left:-135px;
-top:290px;
+background: url('img/left-of-video.png') no-repeat;
+background-size: 100% 100%;
+left:0;
+top:35%;
 }
-
 .video::after{
    content:'';
    position:absolute;
    width:120px;
    height:235px;
-   background: url(img/right-of-video.png) no-repeat;
-   right:-135px;
-   top:290px;
+   background: url('img/right-of-video.png') no-repeat;
+   background-size: 100% 100%;
+   right:0;
+   top:35%;
    }
-   
    .festival-text{
-      width:595px;
+      max-width:595px;
       font-size:18px;
       line-height: 28px;
       text-align: center;
@@ -208,37 +347,58 @@ top:290px;
    }
    .festival-text a{
       text-decoration: none;
+      color: #00bfff;
    }
-      .video-festival{
-         width:843px;
-         height:679px;
-      }
+   .festival-text a:hover{
+      color: #C77C50;
+   }
+
    /*Events*/
+
    .events{
       padding:0;
       margin:0;
       padding-top:100px;
+      overflow: hidden;
    }
-   .events-img-1{
-      width:362px;
-      height:292px;
+   .slider-item-1,
+   .slider-item-2,
+   .slider-item-3,
+   .slider-item-4,
+   .slider-item-5,
+   .slider-item-6{
+      min-width: 33%;
+      height: auto;
+      
    }
-   .events-img-2{
-      width:363px;
-      height:292px;
+   .slider-item-3{
+      margin-right: 12px;
    }
-   .events-img-3{
-      width:363px;
-      height:292px;
+   .events-img-1,
+   .events-img-2,
+   .events-img-3,
+   .events-img-4,
+   .events-img-5,
+   .events-img-6,
+   .food-img-1,
+   .food-img-2,
+   .food-img-3,
+   .food-img-4,
+   .food-img-5,
+   .food-img-6{
+      width: 100%;
+      height: auto;
    }
+ 
    /*Attractions*/
+
    .attractions{
       padding:0;
       margin:0;
       padding-top:100px;
    }
    .attraction-text{
-      width:680px;
+      max-width:680px;
       font-size:18px;
       line-height: 28px;
       text-align: center;
@@ -247,29 +407,42 @@ top:290px;
       color: #503C49;
       margin-top:30px;
    }
+   
    .attraction-btn{
-      width:202px;
-      height:43px;
+      text-align: center;
       margin: 47px auto 142px auto;
+      background-image: url('img/btn.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 202px;
+      height: 43px;
    }
+   .attraction-btn-item{
+      height: 43px;
+      padding-top: 7px;
+   }
+   .attraction-btn a{
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 400;
+      color: #000;
+      
+   }
+   .attraction-btn a:hover{
+      color: #b4b4b4;
+      font-size: 20px;
+   }
+   
    /*Food-and-drinks*/
+
    .food-and-drinks{
       padding: 100px 0;
       margin:0;
+      overflow: hidden;
    }
-   .food-img-1{
-      width:362px;
-      height:292px;
-   }
-   .food-img-2{
-      width:363px;
-      height:292px;
-   }
-   .food-img-3{
-      width:363px;
-      height:292px;
-   }
+  
    /*Footer*/
+
    .footer{
       padding:0;
       margin:0;
@@ -285,11 +458,12 @@ top:290px;
       height:275px;
    }
    .footer-items{
-      width:1200px;
+      max-width:1200px;
       margin:0 auto;
       display:flex;
       justify-content: space-between;
       margin-bottom:100px;
+      padding: 0 40px;
    }
    .footer-items ul{
       list-style:none;
@@ -319,50 +493,223 @@ top:290px;
    }
    .footer-item-5 ul{
       display:flex;
+      justify-content: space-between;
    }
-   .footer-item-5 li{
-      margin-right:25px;
-   }
-   .footer-item-5 li:last-child{
-      margin-right:0;
-   }
-   .footer-logo{
-      width:164px;
-      height:51px;
-   }
-   .inst-img{
+   .inst-link{
       width:17px;
       height:17px;
    }
-   .inst-tw{
+   .tw-link{
       width:21px;
       height:15px;
    }
-   .inst-fb{
+   .fb-link{
       width:8px;
       height:15px;
    }
    .footer-item-5{
       margin-top:20px;
+      max-width: 80px;
    }
+.footer-item-1,
+.footer-item-2,
+.footer-item-3,
+.footer-item-4,
+.footer-item-5{
+   width: 20%;
+}
+.footer a:hover{
+   color: #bcbcbc;
+}
+.inst-link:hover,
+.tw-link:hover,
+.fb-link:hover{
+   transform: translateY(-5px);
+}
+/* Media */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media(max-width: 1250px){
+   .header-logo{
+      width: 13%;
+      left:calc(50% - 70px);
+   }
+}
+@media(max-width: 1150px){
+   .header-logo{
+      left:calc(51% - 70px);
+   }
+}
+@media(max-width: 1050px){
+   .footer-item-1,
+   .footer-item-2,
+   .footer-item-3,
+   .footer-item-4{
+      margin-right: 10px;
+   }
+   .header-menu{
+      margin: 0 50px;
+   }
+}
+@media(max-width: 950px){
+   .header-logo{
+      left:calc(51% - 60px);
+   }
+   .footer-items{
+      padding: 0 15px;
+   }
+   .footer-logo{
+      width: 130px;
+   }
+   .video::before,
+   .video::after{
+      display:none;
+   }
+   .video{
+      padding: 0;
+   }
+}
+@media(max-width: 850px){
+   .header-logo{
+      left:calc(51% - 55px);
+   }
+   .footer-items{
+      padding: 0 10px;
+   }
+   .header-menu{
+      margin: 0 15px;
+   }
+   .header-menu{
+   padding-top: 20px;
+   }
+}
+@media(max-width: 767px){
+   .header-menu{
+      display: none;
+   }
+   .nav-burger{
+      display: block;
+   }
+   .header-logo{
+     display: none;
+   }
+   .header-logo-block{
+      display: block;
+   }
+   .date-of-festival{
+      margin-top: 50px;
+   }
+   .slider-item-1,
+   .slider-item-2,
+   .slider-item-3,
+   .slider-item-4,
+   .slider-item-5,
+   .slider-item-6{
+      min-width: 49.5%;
+   }
+   .slider-item-3{
+      margin-right: 0;
+   }
+   .slider-item-4,
+   .slider-item-2{
+      margin-right: 10px;
+   }
+   .footer-items{
+      display: block;
+   }
+   .border-footer{
+      display: none;
+   }
+   .header-btn{
+      margin-bottom: 50px;
+   }
+   .border-header{
+      max-height: 609px;
+   }
+   .tradition-of-festival{
+      padding-top: 130px;
+   }
+   .food-and-drinks{
+      border-bottom: 1px solid #bcbcbc;
+   }
+   .footer-item-1,
+   .footer-item-2,
+   .footer-item-3,
+   .footer-item-4,
+   .footer-item-5{
+      width: 100%;
+   }
+   .footer-item-5{
+      margin-top: 50px;
+   }
+   .border-header{
+      display: none;
+   }
+   .header{
+      border-bottom: 1px solid #bcbcbc;
+      padding-bottom: 100px;
+   }
+}
+@media(max-width: 650px){
+   .start-video{
+      width: 120px;
+      height: 120px;
+   }
+   .start-video:hover{
+      width: 124px;
+      height: 124px;
+   }
+   .slider-item-4,
+   .slider-item-2{
+      margin-right: 6px;
+   }
+}
+@media(max-width: 550px){
+   .header-title{
+      font-size: 50px;
+   }
+   .nav-burger{
+      right: 5px;
+   }
+   .title-pages{
+      font-size: 40px;
+   }
+}
+@media(max-width: 450px){
+      .start-video{
+      width: 100px;
+      height: 100px;
+      }
+      .start-video:hover{
+         width: 104px;
+         height: 104px;
+      }
+      .header-title{
+         font-size: 40px;
+      }
+      .nav-burger{
+         right: 0;
+      }
+      .header{
+         padding-bottom: 45px;
+      }
+      .tradition-of-festival,
+      .events,
+      .attractions,
+      .food-and-drinks,
+      .footer{
+         padding-top: 45px;
+      }
+      .arrows{
+         margin-top: 45px;
+      }
+      .attraction-btn{
+         margin-bottom: 50px;
+      }
+      .slider-item-4,
+      .slider-item-2{
+         margin-right: 4px;
+      }
+}
 /* Fonts */
 
 @font-face {
@@ -377,3 +724,14 @@ top:290px;
    font-style:normal;
    font-weight: 200;
 }
+
+/* Animations */
+
+@keyframes menu-slide {
+   from {
+    top: -500px;
+   }
+   to {
+     top: 30px;
+   }
+ }
